@@ -85,6 +85,7 @@ number
 -------------------------------------------------------------------------
 absolute://固定される
 relative://上にある要素から相対的な場所になる
+hero//
 fixed://画面や親要素に対して常に同じ位置に固定される（スクロールしても動かない）
 flex-shrink-0//
 sticky://スクロール位置に応じて通常配置から固定配置に切り替わる（親要素の範囲内で固定）
@@ -109,15 +110,20 @@ const script = document.createElement('script');
   <script src="https://cdn.tailwindcss.com"></script>//tailwindcssを読み込む
 -----------------------------------------------------------------------------
     <a href="https://maximum.vc/" target="_blank">
-      <img src="keep_out/Maximum-logo.svg" alt="Maximumロゴ" class="absolute top-10 left-7 w-[250px] h-auto cursor-pointer">
+      <img src="keep_out/Maximum-logo.svg" alt="Maximumロゴ" class="absolute top-1 left-7 w-[2px] h-auto cursor-pointer">
     </a>//これでリンクを持つ画像にできる
 
 <img src="https://maximum.vc/images/hero.png" alt="Maximumのロゴ" class="hero">//写真入れる
+hero->
+
+
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/gxbklMUNT70?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>//動画埋め込み（autoplayを追加すると自動で再生される）
 <iframe width="560" height="315" src="https://www.youtube.com/embed/HPZOOhzql7w" style="display:none;" allowfullscreen>
 </iframe>//style="display:noneによって画面は非表示で音声だけが再生される
 -----------------------------------------------------------------------------
+
   <a href="https://saitamasgp.wixsite.com/sgp-homepage/single-post/sgp%E3%81%AE%E7%B4%B9%E4%BB%8B"
      target="_blank"
      class="flex-shrink-0">

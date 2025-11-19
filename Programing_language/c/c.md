@@ -273,3 +273,135 @@ printf("(3): %d¥n", pop(&st));
 return 0;
 }
 ---
+  *id = *tmp->id;
+
+//これを使うとなぜか頭文字だけコピーされた
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+//必要に応じて構造体を改良すること
+
+//わかりやすく関数をすべてmain関数の前に定義した
+
+
+struct cell {
+    int time;
+    char id[128];
+    struct cell *next;
+} ;
+
+struct queuel {
+    struct cell *head; 
+    struct cell *tail; 
+} ;
+
+//必要に応じて実装されている各関数を改良すること
+
+struct cell *del_head(struct cell *head)
+{
+    struct cell *p = head->next;
+    free(head);
+    return p; /* 削除後の連結リストの先頭を返す */
+}
+
+struct cell *new_cell(struct cell *next, int time,char id[])
+{
+    struct cell *c = (struct cell *)malloc(sizeof(struct cell));
+    c->time = time;
+    // *c->id = *id;
+    strcpy(c->id, id);
+    c->next = next;
+    return c;
+}
+
+void add_next(struct cell *p, int time,char id[])
+{
+    p->next = new_cell(p->next, time,id);
+}
+
+void enqueue(struct queuel *q, int time,char id[])
+{
+    //enqueue関数を実装
+
+    struct cell *new = new_cell(NULL, time, id); 
+    if (q->head == NULL) { // キューが空の場合
+        q->head = new;
+        q->tail = new; 
+    } else {
+        q->tail->next = new; 
+        q->tail = new; 
+    }
+}
+
+int dequeue(struct queuel *q, char id[])
+{
+    if(q->head==NULL) {
+        printf("Error: queue is empty\n");
+        exit(1);
+    }
+    struct cell *tmp = q->head;
+    int time = tmp->time;
+    // *id = *tmp->id;
+    strcpy(id, tmp->id);
+    q->head = del_head(q->head);
+    if (q->head == NULL) {
+        q->tail = NULL;
+    }
+    return time;
+}
+
+void print(struct queuel *q)
+{
+    struct cell *tmp = q->head;
+    printf("[");
+    while (tmp != NULL) {
+        printf("%02d", tmp->time); // 1桁の時間を2桁で表示
+        if (tmp == q->tail) break;
+        tmp = tmp->next;
+    }
+    printf(" ]\n");
+}
+
+int check(struct queuel *q){
+int a;
+if(q->head == NULL) { 
+a=0;
+}else{
+a=1;    
+}
+return a;
+};
+
+int main(void)
+{
+    int i, time, p_num, quantum, rest_time, current_time = 0;
+    char id[128];
+    struct queuel q;
+
+    q.head = q.tail = NULL;
+
+    scanf("%d %d", &p_num, &quantum);
+    for(int i = 0; i < p_num; i++)
+    {
+        scanf("%s %d", id, &time);
+        enqueue(&q, time, id);
+    }
+
+    while(check(&q)) {
+        rest_time = dequeue(&q, id);
+        if (rest_time > quantum) {
+            rest_time -= quantum;
+            current_time += quantum;
+            enqueue(&q, rest_time, id);
+        } else {
+            current_time += rest_time;
+            printf("%s %d\n", id, current_time);
+        }
+    }
+ dequeue(&q, id);
+    return 0;
+}
+
+//必要に応じて実装されている各関数を改良すること
