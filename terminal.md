@@ -129,6 +129,11 @@ gcc -o test1 test1.c mleak.c # test1.cとmleak.cをコンパイルしてtest1を
 ./a.out < in.txt # a.outを実行してin.txtの中身を入力する
 ./a.out < out.txt # a.outを実行してout.txtに出力内容をコピーする（元の内容は消える）
 ---------------------------------------------------------------------------------
+ C#
+dotnet new console -o MyApp #プロジェクト作成
+cd MyApp #MyAppフォルダーに入る
+dotnet run #実行
+---------------------------------------------------------------------------------
  HTML
 npm start
 npm init -y # package.jsonを作成
@@ -146,28 +151,31 @@ curl filename.js | node # filename.jsを実行する
  TypeScript
 tsc filename.ts # filename.tsをコンパイルしてfilename.jsを作成する
 node filename.js # filename.jsを実行する
-
+---------------------------------------------------------------------------------
  Go
 go run filename.go # filename.goを実行する
 go build filename.go # filename.goの実行ファイルを作成する
 ./filename # filenameを実行する
-
+---------------------------------------------------------------------------------
  Python
-python filename.py # filename.pyを実行する
+python3 filename.py # filename.pyを実行する
 python3 # python3を起動する
 python3 -V # python3のバージョンを確認
-
+---------------------------------------------------------------------------------
  Java
 javac filename.java# filename.javaをコンパイルしてfilename.class(コード内で宣言)を作成する
 javac -encoding UTF-8 filename.java # filename.javaをUTF-8でコンパイル(より広い文字に対応)
 java filename # filenameを実行する(.classは不要)
 javec -version # Javaのバージョンを確認
 code FirstExample.java # FirstExample.javaをVScodeで開く(どうせVSCodeで開くからあまり意味ない)
- 
+---------------------------------------------------------------------------------
+ Ruby
+
+---------------------------------------------------------------------------------
  R
 R # Rを起動する
 quit() # Rを終了する
-
+---------------------------------------------------------------------------------
 LaTeX
 pdflatex filename.tex # filename.texをpdfに変換する
 pdflatex filename.tex && echo "PDF生成成功" # filename.texをpdfに変換した後に"PDF生成成功"と表示
