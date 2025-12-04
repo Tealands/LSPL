@@ -115,25 +115,26 @@ const script = document.createElement('script');
 
 <img src="https://maximum.vc/images/hero.png" alt="Maximumのロゴ" class="hero">//写真入れる
 hero->
-
-
-
 <iframe width="560" height="315" src="https://www.youtube.com/embed/gxbklMUNT70?autoplay=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 </iframe>//動画埋め込み（autoplayを追加すると自動で再生される）
 <iframe width="560" height="315" src="https://www.youtube.com/embed/HPZOOhzql7w" style="display:none;" allowfullscreen>
 </iframe>//style="display:noneによって画面は非表示で音声だけが再生される
 -----------------------------------------------------------------------------
-
-  <a href="https://saitamasgp.wixsite.com/sgp-homepage/single-post/sgp%E3%81%AE%E7%B4%B9%E4%BB%8B"
-     target="_blank"
-     class="flex-shrink-0">
-    <img src="../keep_out/SGP.avif"
-         alt="SGPロゴ"
-         class="w-[200px] h-auto cursor-pointer">
-  </a>
+//表
+<tr>~</tr>
+<td>~</td>
+<table>
+ <caption>A 人口</caption>
+ <tr>
+  <td rowspan = "2">年代</td>
+  <td colspan = "3">人口</td>
+  <td>男性</td>
+  <td>女性</td>
+  <td>合計</td>
+ </tr>
 -----------------------------------------------------------------------------
- 
-
+ <progress>~</progress>
+<meter>
 
 
 -----------------------------------------------------------------------------

@@ -21,8 +21,8 @@ abs()//絶対値
 int main()
 {
     int N, Q;
-    float f;
-    double d;
+    float f;//
+    double d;//
     long long ll;
     char c;
     string s;
