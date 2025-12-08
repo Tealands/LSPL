@@ -43,6 +43,10 @@
 [ABC](https:~)文字をリンクにする
 
 ---
+//数式
+これはインライン数式です：$a^2 + b^2 = c^2$
+
+---
 
 // 音声ファイルの埋め込み例
 
@@ -86,5 +90,49 @@ infoは省略可能です。
 //赤の枠で内容を表示し、×（禁止マークをつける）
 
 ---
+<!-- コードブロックとコピー用ボタン -->
+<div style="position: relative;">
+  <button onclick="copyCode(this)" style="
+    position: absolute; 
+    top: 5px; 
+    right: 5px; 
+    padding: 4px 8px; 
+    font-size: 12px;
+    cursor: pointer;
+  ">Copy</button>
 
-//
+  <pre><code class="language-js">
+// サンプルコード
+function hello() {
+    console.log("Hello, world!");
+}
+hello();
+  </code></pre>
+</div>
+
+<!-- コピー処理用スクリプト -->
+<script>
+function copyCode(button) {
+    try {
+        const code = button.nextElementSibling.innerText;
+        navigator.clipboard.writeText(code).then(() => {
+            button.textContent = "Copied!";
+            setTimeout(() => button.textContent = "Copy", 1500);
+        });
+    } catch (err) {
+        alert("コピーに失敗しました: " + err);
+    }
+}
+</script>
+ポイント
+<div> でコードとボタンをまとめる
+→ ボタンの位置を position: absolute で右上に固定。
+navigator.clipboard.writeText() を使ってコピー
+→ モダンブラウザ対応。HTTPS 環境推奨。
+Markdown 内で HTML が使える環境 でのみ動作
+→ GitHub README では不可（セキュリティ制限のため）。
+静的サイト（Hugo, Jekyll, Docusaurus など）や自作ブログなら可能。
+✅ もし GitHub README や Qiita のように HTML/JS が制限される環境なら、
+JavaScript は使えないので、静的サイトジェネレーターでビルド時にコピー機能を付与する方法が必要です。
+（例：Highlight.js + Clipboard.js を組み込み）
+
