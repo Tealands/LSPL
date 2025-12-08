@@ -151,6 +151,11 @@ TypeScript
 - tsc filename.ts # filename.tsをコンパイルしてfilename.jsを作成する
 - node filename.js # filename.jsを実行する
 ----------------------------------------------------------------------------------
+React
+- pnpm install #reactをインストール
+- npm run dev #reactを起動
+
+----------------------------------------------------------------------------------
 Go
 - go run filename.go # filename.goを実行する
 - go build filename.go # filename.goの実行ファイルを作成する
