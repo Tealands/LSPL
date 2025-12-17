@@ -112,6 +112,9 @@ Github
 - git add .
 - git commit -m "任意の文"
 ----------------------------------------------------------------------------------
+# Gemini CLI
+- npx https://github.com/google-gemini/gemini-cli
+----------------------------------------------------------------------------------
 C++
 - g++ filename1.cpp -o filename2 # filename1.cppの実行ファイルをつくり、filename2と名付ける
 - g++ filename1.cpp # filename1.cppの実行ファイルをつくり、a.outと名付ける

@@ -14,7 +14,8 @@ LSPL
 │   ├── java  
 │   ├── js  
 │   ├── py  
-│   ├── rb  
+│   ├── rb
+│   ├── sh  
 │   ├── sql  
 │   └── ts  
 └── other_language  

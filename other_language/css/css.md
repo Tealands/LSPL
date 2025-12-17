@@ -1,3 +1,5 @@
+/*コメントアウト*/
+
 body {
     font-family: Arial, sans-serif;
     margin: 18px;
@@ -34,8 +36,6 @@ a {
     width: 100px;
     height: auto;
 }
-</style>
-
 
 
 {
@@ -130,5 +130,11 @@ details[open] {
 scale
 translate
 transform
+
+
+--------------------------------------------------------------------
+
+
+
 
 
