@@ -1,6 +1,8 @@
 # LSPL
 learn some programing language
 
+**AIに作成してもらうときはできるだけコメントアウトを消して文字数行数カウントに影響を与えないように気を付ける必要あり**
+
 LSPL  
 ├── MarkUp_Language  
 │   ├── html  
